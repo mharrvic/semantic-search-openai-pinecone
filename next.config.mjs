@@ -7,6 +7,9 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    domains: ["cdn.discordapp.com"],
+  },
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
