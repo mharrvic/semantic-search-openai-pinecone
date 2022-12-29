@@ -1,10 +1,12 @@
 import { router } from "../trpc";
 import { authRouter } from "./auth";
-import { exampleRouter } from "./example";
+import { libraryRouter } from "./library";
+import { openAiPinecone } from "./openai-pinecone";
 
 export const appRouter = router({
-  example: exampleRouter,
   auth: authRouter,
+  openAiPinecone: openAiPinecone,
+  library: libraryRouter,
 });
 
 // export type definition of API
