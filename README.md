@@ -18,9 +18,23 @@ This is a demo app that shows how to use [OpenAI Embeddings](https://beta.openai
 - [OpenAI Embeddings](https://beta.openai.com/docs/guides/embeddings)
 - [NeonDB serverless postgres db](neon.tech)
 
+
+## Demo Video
+
+
+https://user-images.githubusercontent.com/15852818/209995984-25fefed6-956c-4c8e-90c5-e5a3db310c29.mp4
+
+
+
+https://user-images.githubusercontent.com/15852818/209996939-06a97708-7bed-4a8e-997a-7df99523727c.mp4
+
+
+
+
 ## Learn More
 
-### Record
+
+## Input record
 
 ![semantic-search-openai-pinecone-input.png](semantic-search-openai-pinecone-input.png)
 
