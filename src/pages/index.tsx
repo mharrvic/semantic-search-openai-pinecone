@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Semantic Search</title>
+        <title>Semantic Search with OpenAI embeddings + Pinecone</title>
         <meta
           name="description"
           content="Semantic search using openai embeddings + pinecone"
@@ -53,8 +53,7 @@ const Home: NextPage = () => {
           ) : (
             <div>
               <h1 className="text-4xl font-extrabold text-white sm:text-[5rem]">
-                Semantic{" "}
-                <span className="text-[hsl(280,100%,70%)]">Search</span>
+                Semantic <span className="text-search">Search</span>
               </h1>
               <p className="mt-4 text-3xl text-white">
                 with OpenAI embeddings + Pinecone
@@ -62,7 +61,7 @@ const Home: NextPage = () => {
 
               <h3 className="mt-10 text-2xl text-white">
                 <span
-                  className="cursor-pointer text-[hsl(280,100%,70%)]"
+                  className="cursor-pointer text-search"
                   onClick={() => signIn()}
                 >
                   Signin
