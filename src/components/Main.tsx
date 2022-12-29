@@ -6,6 +6,10 @@ const Main = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="bg-gradient-to-b from-[#2e026d] to-[#15162c]">
       <nav className="flex">
+        <p className="px-10 py-3 text-xl text-white">
+          Semantic <span className="text-search">Search</span> with OpenAI
+          Embeddings + Pinecone
+        </p>
         <div className="ml-auto">
           <button
             className="bg-gray/10 hover:bg-gray/20 rounded-full px-10 py-3 font-semibold text-white no-underline transition"
