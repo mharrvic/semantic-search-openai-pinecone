@@ -48,6 +48,9 @@ export const openAiPinecone = router({
         topK: 3,
         includeMetadata: true,
         vector: vectorEmbedding,
+        filter: {
+          userId: ctx.session.user.id,
+        },
       });
 
       return { test: input.text, user: ctx.session.user.email, pineconeSearch };
