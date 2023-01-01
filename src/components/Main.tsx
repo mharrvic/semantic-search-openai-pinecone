@@ -4,7 +4,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
   const { data: authSessionData } = useSession();
 
   return (
-    <div className="bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+    <div className="h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c]">
       <nav className="flex">
         <p className="px-10 py-3 text-xl text-white">
           Semantic <span className="text-search">Search</span> with OpenAI
@@ -19,9 +19,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
           </button>
         </div>
       </nav>
-      <main className="min-h-screen min-w-full items-center justify-center">
-        {children}
-      </main>
+      <div className="mx-4 px-4 py-16 text-center">{children}</div>
     </div>
   );
 };

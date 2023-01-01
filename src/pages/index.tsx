@@ -27,50 +27,48 @@ const Home: NextPage = () => {
       </Head>
 
       <Main>
-        <div className="justify-center px-60 py-16 text-center">
-          {authSessionData ? (
-            <>
-              <span className="isolate mb-10 inline-flex rounded-md shadow-sm">
-                <button
-                  type="button"
-                  className="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                  onClick={() => setFeature("search")}
-                >
-                  Search
-                </button>
+        {authSessionData ? (
+          <>
+            <span className="isolate mb-10 inline-flex rounded-md shadow-sm">
+              <button
+                type="button"
+                className="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onClick={() => setFeature("search")}
+              >
+                Search
+              </button>
 
-                <button
-                  type="button"
-                  className="relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                  onClick={() => setFeature("library")}
-                >
-                  Library
-                </button>
-              </span>
+              <button
+                type="button"
+                className="relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onClick={() => setFeature("library")}
+              >
+                Library
+              </button>
+            </span>
 
-              {featureComponent}
-            </>
-          ) : (
-            <div>
-              <h1 className="text-4xl font-extrabold text-white sm:text-[5rem]">
-                Semantic <span className="text-search">Search</span>
-              </h1>
-              <p className="mt-4 text-3xl text-white">
-                with OpenAI embeddings + Pinecone
-              </p>
+            {featureComponent}
+          </>
+        ) : (
+          <div>
+            <h1 className="text-4xl font-extrabold text-white sm:text-[5rem]">
+              Semantic <span className="text-search">Search</span>
+            </h1>
+            <p className="mt-4 text-3xl text-white">
+              with OpenAI embeddings + Pinecone
+            </p>
 
-              <h3 className="mt-10 text-2xl text-white">
-                <span
-                  className="cursor-pointer text-search"
-                  onClick={() => signIn()}
-                >
-                  Signin
-                </span>{" "}
-                to continue
-              </h3>
-            </div>
-          )}
-        </div>
+            <h3 className="mt-10 text-2xl text-white">
+              <span
+                className="cursor-pointer text-search"
+                onClick={() => signIn("google")}
+              >
+                Signin
+              </span>{" "}
+              to continue
+            </h3>
+          </div>
+        )}
       </Main>
 
       <Toaster />
