@@ -13,7 +13,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         <div className="ml-auto">
           <button
             className="bg-gray/10 hover:bg-gray/20 rounded-full px-10 py-3 font-semibold text-white no-underline transition"
-            onClick={authSessionData ? () => signOut() : () => signIn()}
+            onClick={authSessionData ? () => signOut() : () => signIn("google")}
           >
             {authSessionData ? "Sign out" : "Sign in"}
           </button>
