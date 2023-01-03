@@ -3,10 +3,11 @@ import { z } from "zod";
 import { prisma } from "../../../server/db/client";
 import { createEmbedding } from "../../../utils/openai";
 import { pinecone } from "../../../utils/pinecone";
-import { protectedProcedure, router } from "../trpc";
+import { publicProcedure, router } from "../trpc";
+import { myUserId } from "./_app";
 
 export const openAiPinecone = router({
-  upsertEmbedding: protectedProcedure
+  upsertEmbedding: publicProcedure
     .input(z.object({ text: z.string(), title: z.string() }))
     .mutation(async ({ ctx, input }) => {
       const { text, title } = input;
@@ -19,7 +20,7 @@ export const openAiPinecone = router({
           {
             id,
             values: vectorEmbedding,
-            metadata: { userId: ctx.session.user.id, text, title },
+            metadata: { userId: myUserId, text, title },
           },
         ],
       });
@@ -29,16 +30,15 @@ export const openAiPinecone = router({
           title,
           description: text,
           embeddingId: id,
-          userId: ctx.session.user.id,
+          userId: myUserId,
         },
       });
 
       return {
         test: input.text,
-        user: ctx.session.user.email,
       };
     }),
-  searchEmbedding: protectedProcedure
+  searchEmbedding: publicProcedure
     .input(z.object({ text: z.string() }))
     .mutation(async ({ ctx, input }) => {
       const text = input.text;
@@ -49,10 +49,10 @@ export const openAiPinecone = router({
         includeMetadata: true,
         vector: vectorEmbedding,
         filter: {
-          userId: ctx.session.user.id,
+          userId: myUserId,
         },
       });
 
-      return { test: input.text, user: ctx.session.user.email, pineconeSearch };
+      return { test: input.text, pineconeSearch };
     }),
 });

@@ -1,10 +1,11 @@
-import { protectedProcedure, router } from "../trpc";
+import { publicProcedure, router } from "../trpc";
+import { myUserId } from "./_app";
 
 export const libraryRouter = router({
-  getMyLibrary: protectedProcedure.query(({ ctx }) => {
+  getMyLibrary: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.library.findMany({
       where: {
-        userId: ctx.session.user.id,
+        userId: myUserId,
       },
     });
   }),
