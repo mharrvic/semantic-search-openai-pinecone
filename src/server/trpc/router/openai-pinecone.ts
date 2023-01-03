@@ -9,7 +9,7 @@ import { myUserId } from "./_app";
 export const openAiPinecone = router({
   upsertEmbedding: publicProcedure
     .input(z.object({ text: z.string(), title: z.string() }))
-    .mutation(async ({ ctx, input }) => {
+    .mutation(async ({ input }) => {
       const { text, title } = input;
       const id = ulid();
 
@@ -40,7 +40,7 @@ export const openAiPinecone = router({
     }),
   searchEmbedding: publicProcedure
     .input(z.object({ text: z.string() }))
-    .mutation(async ({ ctx, input }) => {
+    .mutation(async ({ input }) => {
       const text = input.text;
       const embedding = await createEmbedding(text);
       const vectorEmbedding = embedding.data[0]?.embedding ?? [];
