@@ -1,6 +1,9 @@
 # Semantic Search with OpenAI Embeddings and Pinecone
 
 Demo link: https://semantic-search.mharrvic.com
+
+You can use this https://public-semantic-search.mharrvic.com/ if you're having authentication issues.
+
 Repo link: [https://github.com/mharrvic/semantic-search-openai-pinecone](https://github.com/mharrvic/semantic-search-openai-pinecone)
 
 This is a demo app that shows how to use [OpenAI Embeddings](https://beta.openai.com/docs/guides/embeddings) and [Pinecone](https://pinecone.io) vector database to build a semantic search engine. Based on https://docs.pinecone.io/docs/semantic-text-search. You can run explore this freely using the free tier of Pinecone and OpenAI.
